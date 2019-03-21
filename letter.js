@@ -11,7 +11,11 @@ const Letter = function(letter) {
     };
     this.check = function(character) {
         if(character === this.string) {
+            console.log("Right!")
             this.boolean = true;
+        }
+        else {
+            console.log("wrong!")
         }
     }
 }
