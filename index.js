@@ -1,6 +1,16 @@
 const Word = require("./word");
 const inquirer = require("inquirer")
 
-let word = "testing";
+let word = new Word("testing");
+word.displayWord()
 
-Word(word)
+inquirer.prompt([
+    {
+        name: "guess",
+        message: "Guess a letter!"
+    }
+]).then(function(response){
+    word.guess(response.guess);
+    //console.log(response)
+    word.displayWord()
+})

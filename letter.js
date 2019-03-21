@@ -11,18 +11,18 @@ const Letter = function(letter) {
     };
     this.check = function(character) {
         if(character === this.string) {
-            console.log("Right!")
+            //console.log("Right!")
             this.boolean = true;
         }
         else {
-            console.log("wrong!")
+            //console.log("wrong!")
         }
     }
 }
-let guess = new Letter("e")
+//let guess = new Letter("e")
 //console.log(guess)
 //console.log(guess.toString())
-guess.check("e");
+//guess.check("e");
 //console.log(guess.boolean)
 
 module.exports = Letter;

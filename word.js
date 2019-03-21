@@ -3,26 +3,32 @@ const Letter = require("./letter");
 const Word = function(word) {
     this.letters = [];
     let array = word.split("");
-    console.log(array)
+    //console.log(array)
     for(let i=0; i<array.length; i++) {
         this.letters.push(new Letter(array[i]))
     }
     this.displayWord = function() {
         let display = "";
         for(item in this.letters) {
-            display += this.letters[item] + " "
+           display += this.letters[item].toString() + " "
         }
         console.log(display)
     }
     this.guess = function(character) {
         for(item in this.letters) {
             this.letters[item].check(character)
+            if(this.letters[item].boolean) {
+                console.log("Correct!")
+                return "Correct!"
+            }
         }
+        console.log("Incorrect!")
+
     }
 }
 
 let test = new Word("testing")
-test.guess('t')
-//console.log("test: " + test.letters)
+test.guess('g')
+test.displayWord()
 
 module.exports = Word;
