@@ -15,20 +15,27 @@ const Word = function(word) {
         console.log(display)
     }
     this.guess = function(character) {
-        for(item in this.letters) {
-            this.letters[item].check(character)
-            if(this.letters[item].boolean) {
-                console.log("Correct!")
-                return "Correct!"
+        
+        //if character is in the word console correct:
+        var found = false;
+        for (let i=0; i<this.letters.length; i++) {
+            this.letters[i].check(character)
+            if(this.letters[i].string === character) {
+                found = true;
             }
         }
-        console.log("Incorrect!")
+        if (found) {
+            console.log("Correct!")
+        }
+        else {
+            console.log("Incorrect!")
+        }
 
     }
 }
 
-let test = new Word("testing")
-test.guess('g')
-test.displayWord()
+// let test = new Word("testing")
+// test.guess('g')
+// test.displayWord()
 
 module.exports = Word;
