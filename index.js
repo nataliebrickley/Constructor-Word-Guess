@@ -3,7 +3,7 @@ const inquirer = require("inquirer")
 
 let word = new Word("testing");
 word.displayWord()
-
+let count = 10;
 const play = function () {
     inquirer.prompt([
         {
@@ -14,7 +14,18 @@ const play = function () {
         word.guess(response.guess);
         //console.log(response)
         word.displayWord()
-        play();
+        count --
+        console.log(count + " guesses remaining")
+        if (count > 0 && !word.solved) {
+            play()
+        }
+        else if (word.solved){
+            console.log("CONGRATULATIONS! You Win!!!")
+        }
+        else{
+            console.log("Sorry you ran out of guesses!")
+        }
+        
     })
 }
 play();
