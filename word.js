@@ -24,3 +24,5 @@ const Word = function(word) {
 let test = new Word("testing")
 test.guess('t')
 //console.log("test: " + test.letters)
+
+module.exports = Word;
