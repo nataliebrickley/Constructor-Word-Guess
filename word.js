@@ -1,9 +1,9 @@
 const Letter = require("./letter");
+require('terminal-colors');
 
 const Word = function(word) {
     this.letters = [];
     let array = word.split("");
-    //console.log(array)
     for(let i=0; i<array.length; i++) {
         this.letters.push(new Letter(array[i]))
     }
@@ -35,17 +35,13 @@ const Word = function(word) {
             }
         }
         if (found) {
-            console.log("Correct!")
+            console.log("Correct!".yellow)
         }
         else {
-            console.log("Incorrect!")
+            console.log("Incorrect!".red)
         }
 
     }
 }
-
-// let test = new Word("testing")
-// test.guess('g')
-// test.displayWord()
 
 module.exports = Word;

@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/nataliebrickley/Constructor-Word-Guess#readme",
   "dependencies": {
-    "inquirer": "^6.2.2"
+    "inquirer": "^6.2.2",
+    "terminal-colors": "^0.1.4"
   }
 }
